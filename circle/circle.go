@@ -2,13 +2,18 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 )
 
 func main() {
 	var radius int
-	radius, _ = strconv.Atoi(os.Args[1])
+	if len(os.Args) > 1 {
+		radius, _ = strconv.Atoi(os.Args[1])
+	} else {
+		radius = 0
+	}
 	if radius == 0 {
 		fmt.Println("It seems like you didn't type any argument to this program, or you typed 0. This program needs an argument other than 0, to use as the circle's radius. Now, input the number. What should be the circle's radius?")
 		fmt.Scan(&radius)
@@ -22,10 +27,27 @@ func main() {
 		}
 		fmt.Print(radius, ". Good. Please remember to input an argument next time.\n\n")
 	}
+	var radiusFloat float64
+	radiusFloat = float64(radius)
+	// First half
 	for i := 0; i < radius; i++ {
-		for j := 0; j < 5; j++ {
-			fmt.Println("  ")
+		for j := 0; j < int(radiusFloat-math.Sqrt(math.Pow(radiusFloat, 2)-math.Pow(radiusFloat-float64(i), 2))); j++ {
+			fmt.Print("  ")
 		}
-		fmt.Println("* ")
+		for h := 0; h < int(2*math.Sqrt(math.Pow(radiusFloat, 2)-math.Pow(radiusFloat-float64(i), 2))); h++ {
+			fmt.Print("* ")
+		}
+		fmt.Println("")
 	}
+	// Second half
+	for i := radius; i > 0; i = i - 1 {
+		for j := 0; j < int(radiusFloat-math.Sqrt(math.Pow(radiusFloat, 2)-math.Pow(radiusFloat-float64(i), 2))); j++ {
+			fmt.Print("  ")
+		}
+		for h := 0; h < int(2*math.Sqrt(math.Pow(radiusFloat, 2)-math.Pow(radiusFloat-float64(i), 2))); h++ {
+			fmt.Print("* ")
+		}
+		fmt.Println("")
+	}
+	fmt.Println("")
 }
