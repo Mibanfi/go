@@ -8,6 +8,7 @@ func main() {
 	var number uint64
 	fmt.Println("Please input your number. (Must not be higher than 18446744073709551615.)")
 	fmt.Scan(&number)
+	fmt.Println("Your chosen number was:", number)
 	fmt.Println("The output is:", numToWord(number))
 	fmt.Println("You may quit whenever you like by pressing Ctrl + C.")
 	fmt.Println("")
@@ -84,7 +85,6 @@ func numToWord(number uint64) string {
 	var digits [20]int
 	digits = intToArray(number)
 	var word string
-	fmt.Println("Your chosen number was:", number)
 	for i := digitCount(number) - 1; i >= 0; i = i - 1 {
 		// Checks for "teen"-type numbers
 		if digits[i] == 1 && i%3 == 1 {
