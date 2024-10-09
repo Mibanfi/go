@@ -10,6 +10,9 @@ func main() {
 	fmt.Scan(&number)
 	fmt.Println("Your chosen number was:", number)
 	fmt.Println("The output is:", numToWord(number))
+	if number == 69 {
+		fmt.Println("Nice")
+	}
 	fmt.Println("You may quit whenever you like by pressing Ctrl + C.")
 	fmt.Println("")
 	main()
@@ -82,7 +85,7 @@ func numToWord(number uint64) string {
 	if number == 0 {
 		return "Zero"
 	}
-	var digits [20]int
+	var digits [21]int
 	digits = intToArray(number)
 	var word string
 	for i := digitCount(number) - 1; i >= 0; i = i - 1 {
@@ -121,8 +124,8 @@ func digitCount(num uint64) int {
 	}
 }
 
-func intToArray(num uint64) [20]int {
-	var digits [20]int
+func intToArray(num uint64) [21]int {
+	var digits [21]int
 	var count int
 	count = digitCount(num)
 	for i := 0; i < count; i++ {

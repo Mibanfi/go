@@ -1,17 +1,15 @@
-package plutopos
+package main
 
 import "fmt"
 
 func main() {
 	var age, i uint64
-	fmt.Print("Your age is ")
+	fmt.Print("Please input your updated age: ")
 	fmt.Scan(&age)
 	for i = 1; i < age; i++ {
-		fmt.Println(numToWord(i))
+		fmt.Print(numToWord(i), ", ")
 	}
-	fmt.Println("..aaaaaaand...")
+	fmt.Println("\n..aaaaaaand...")
 	fmt.Print(numToWord(age), "! HAPPY BIRTHDAY!!")
-	fmt.Println("")
-	fmt.Println("")
-	fmt.Println("I love you :D")
+	fmt.Println("\n\nI love you :D")
 }

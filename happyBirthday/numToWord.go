@@ -2,18 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	// Input number
-	// Cap on uint64 is 18'446'744'073'709'551'615
-	var number uint64
-	fmt.Println("Please input your number. (Must not be higher than 18446744073709551615.)")
-	fmt.Scan(&number)
-	fmt.Println("The output is:", numToWord(number))
-	fmt.Println("You may quit whenever you like by pressing Ctrl + C.")
-	fmt.Println("")
-	main()
-}
-
 func numToWord(number uint64) string {
 	// Matrix used for conversion
 	var conversionTable [3][10]string
