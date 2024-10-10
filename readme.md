@@ -1,5 +1,7 @@
 # Readme
 ## Soprannomi (per ora):
-- Denis = Il Condottiero
-- Ale = Messer Peppa
-- Michele = L'Onorevole
+- Il Condottiero
+- Messer Peppa
+- L'Onorevole
+- Il Gamer
+- Muori
