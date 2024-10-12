@@ -1,8 +1,12 @@
 package main
+
 import (
+	"biscuit"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(5/2)
+	var numbers []string
+	numbers = biscuit.Input(3, 3, []string{"number1", "number2", "number3"})
+	fmt.Println(numbers)
 }
